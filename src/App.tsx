@@ -30,9 +30,7 @@ function Navigation() {
           <a href="#" className="flex items-center gap-3">
             <div className="w-9 h-9 bg-nordic-900 rounded-lg flex items-center justify-center">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </div>
             <span className="font-semibold text-nordic-900 text-lg tracking-tight">AuraGrid</span>
@@ -41,7 +39,7 @@ function Navigation() {
           <div className="hidden md:flex items-center gap-10">
             <a href="#about" className="text-sm text-nordic-600 hover:text-nordic-900 transition-colors duration-300">About</a>
             <a href="#services" className="text-sm text-nordic-600 hover:text-nordic-900 transition-colors duration-300">Services</a>
-            <a href="#approach" className="text-sm text-nordic-600 hover:text-nordic-900 transition-colors duration-300">Approach</a>
+            <a href="#team" className="text-sm text-nordic-600 hover:text-nordic-900 transition-colors duration-300">Team</a>
             <a href="#contact" className="text-sm text-nordic-600 hover:text-nordic-900 transition-colors duration-300">Contact</a>
           </div>
 
@@ -63,7 +61,7 @@ function Navigation() {
         <div className="md:hidden bg-white border-t border-nordic-100 px-6 py-6 space-y-4">
           <a href="#about" onClick={() => setMobileOpen(false)} className="block text-nordic-700 py-2">About</a>
           <a href="#services" onClick={() => setMobileOpen(false)} className="block text-nordic-700 py-2">Services</a>
-          <a href="#approach" onClick={() => setMobileOpen(false)} className="block text-nordic-700 py-2">Approach</a>
+          <a href="#team" onClick={() => setMobileOpen(false)} className="block text-nordic-700 py-2">Team</a>
           <a href="#contact" onClick={() => setMobileOpen(false)} className="block text-nordic-700 py-2">Contact</a>
           <a href="#contact" className="inline-flex items-center px-5 py-2.5 bg-nordic-900 text-white text-sm font-medium rounded-full mt-4">
             Get in Touch
@@ -77,19 +75,22 @@ function Navigation() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
-      {/* Subtle background pattern */}
+      {/* Electric line accents */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/20 to-transparent"></div>
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-nordic-900"></div>
         <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full bg-accent"></div>
       </div>
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(90deg, #0f172a 1px, transparent 1px)', backgroundSize: '60px 60px' }}></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-32 pb-20 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="animate-fade-in-up opacity-0-start">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-sage-light text-sage text-sm font-medium rounded-full mb-8">
-                <span className="w-2 h-2 bg-sage rounded-full"></span>
-                Berlin-based Engineering Consultancy
+                <span className="w-2 h-2 bg-sage rounded-full electric-dot"></span>
+                Dubai & Berlin — Power Systems Consultancy
               </span>
             </div>
 
@@ -127,20 +128,19 @@ function Hero() {
                     </div>
                     <div className="h-40 bg-gradient-to-br from-sage-light to-green-50 rounded-xl flex items-center justify-center">
                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6b8f71" strokeWidth="1.5">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 6v6l4 2"/>
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
                       </svg>
                     </div>
                   </div>
                   <div className="space-y-4 pt-8">
                     <div className="h-40 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl flex items-center justify-center">
                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.5">
-                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
                       </svg>
                     </div>
                     <div className="h-32 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl flex items-center justify-center">
                       <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="1.5">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
                       </svg>
                     </div>
                   </div>
@@ -159,10 +159,10 @@ function Stats() {
   const isInView = useInView(ref);
 
   const stats = [
-    { number: '15+', label: 'Years Experience' },
+    { number: '20+', label: 'Years Experience' },
     { number: '200+', label: 'Projects Delivered' },
     { number: '50+', label: 'Utility Partners' },
-    { number: '99%', label: 'Client Satisfaction' },
+    { number: '2', label: 'Global Offices' },
   ];
 
   return (
@@ -331,14 +331,73 @@ function Services() {
           {services.map((service, i) => (
             <div
               key={i}
-              className={`group bg-white rounded-2xl p-8 border border-nordic-100 hover:border-nordic-200 hover:shadow-lg transition-all duration-500 cursor-default ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`service-card electric-border group bg-white rounded-2xl p-8 border border-nordic-100 hover:border-transparent cursor-default ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: `${(i + 2) * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-nordic-50 group-hover:bg-sage-light flex items-center justify-center text-nordic-600 group-hover:text-sage transition-all duration-300 mb-6">
+              <div className="service-icon w-14 h-14 rounded-xl bg-nordic-50 flex items-center justify-center text-nordic-600 transition-all duration-300 mb-6">
                 {service.icon}
               </div>
               <h3 className="text-lg font-medium text-nordic-900 mb-3">{service.title}</h3>
               <p className="text-sm text-nordic-500 leading-relaxed">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Team() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
+
+  const team = [
+    {
+      name: 'Dr. Nand Singh',
+      role: 'Co-Founder & Senior Leader',
+      bio: 'A senior leader with 20+ years of proven record in the power and energy industry. Dr. Singh brings deep expertise in power system engineering, strategic leadership, and a track record of delivering transformative energy solutions across global markets.',
+      initials: 'NS',
+      gradient: 'from-blue-100 to-sage-light',
+    },
+    {
+      name: 'Dr. Nagaraju Pogaku',
+      role: 'Co-Founder & Senior Expert',
+      bio: 'A senior expert with 20+ years of proven record in the power and energy industry. Dr. Pogaku combines technical excellence with innovative thinking, specializing in renewable energy integration and advanced power system analysis.',
+      initials: 'NP',
+      gradient: 'from-sage-light to-blue-100',
+    },
+  ];
+
+  return (
+    <section id="team" ref={ref} className="py-24 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16 lg:mb-20">
+          <span className={`text-sm font-medium text-sage tracking-wider uppercase mb-4 block transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>Our Leadership</span>
+          <h2 className={`text-4xl lg:text-5xl font-light text-nordic-900 leading-tight transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Guided by<br/>
+            <span className="font-serif italic">decades of expertise</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {team.map((member, i) => (
+            <div
+              key={i}
+              className={`team-card electric-border bg-white rounded-2xl p-8 lg:p-10 border border-nordic-100 hover:border-transparent transition-all duration-500 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${(i + 2) * 150}ms` }}
+            >
+              <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center mb-6`}>
+                <span className="text-2xl font-light text-nordic-700">{member.initials}</span>
+              </div>
+              <h3 className="text-xl font-medium text-nordic-900 mb-1">{member.name}</h3>
+              <p className="text-sm text-sage font-medium mb-4">{member.role}</p>
+              <p className="text-sm text-nordic-500 leading-relaxed">{member.bio}</p>
+              <div className="mt-6 pt-6 border-t border-nordic-100 flex items-center gap-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b8f71" strokeWidth="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                <span className="text-xs text-nordic-400">20+ years in power & energy</span>
+              </div>
             </div>
           ))}
         </div>
@@ -359,7 +418,7 @@ function Approach() {
   ];
 
   return (
-    <section id="approach" ref={ref} className="py-24 lg:py-32 bg-white">
+    <section id="approach" ref={ref} className="py-24 lg:py-32 bg-nordic-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           <div className={`transition-all duration-700 ${isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
@@ -377,7 +436,7 @@ function Approach() {
             <div className="space-y-8">
               {steps.map((step, i) => (
                 <div key={i} className="flex gap-6 group">
-                  <div className="text-3xl font-light text-nordic-200 group-hover:text-sage transition-colors duration-300">{step.num}</div>
+                  <div className="text-3xl font-light text-nordic-200 group-hover:text-electric transition-colors duration-300">{step.num}</div>
                   <div>
                     <h4 className="font-medium text-nordic-900 mb-2">{step.title}</h4>
                     <p className="text-sm text-nordic-500 leading-relaxed">{step.desc}</p>
@@ -397,11 +456,107 @@ function Contact() {
   const isInView = useInView(ref);
 
   return (
-    <section id="contact" ref={ref} className="py-24 lg:py-32 bg-nordic-900 text-white relative overflow-hidden">
+    <section id="contact" ref={ref} className="py-24 lg:py-32 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16">
+          <span className={`text-sm font-medium text-sage tracking-wider uppercase mb-4 block transition-all duration-700 ${isInView ? 'opacity-100' : 'opacity-0'}`}>Connect With Us</span>
+          <h2 className={`text-4xl lg:text-5xl font-light text-nordic-900 leading-tight transition-all duration-700 delay-100 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Let's power your<br/>
+            <span className="font-serif italic">next project</span>
+          </h2>
+        </div>
+
+        <div className={`grid lg:grid-cols-2 gap-12 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* Contact Info */}
+          <div className="space-y-8">
+            <div className="electric-border bg-white rounded-2xl p-8 border border-nordic-100 hover:border-transparent transition-all duration-300">
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-sage-light flex items-center justify-center flex-shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b8f71" strokeWidth="1.5">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-medium text-nordic-900 mb-2">Visit Our Office</h4>
+                  <p className="text-sm text-nordic-500 leading-relaxed">
+                    Building A1, Dubai Digital Park<br/>
+                    Dubai Silicon Oasis<br/>
+                    Dubai 342001<br/>
+                    United Arab Emirates
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="electric-border bg-white rounded-2xl p-8 border border-nordic-100 hover:border-transparent transition-all duration-300">
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.5">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-medium text-nordic-900 mb-2">Call Us</h4>
+                  <a href="tel:+971567835629" className="text-sm text-nordic-500 hover:text-nordic-900 transition-colors">
+                    +971 (0) 567835629
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="electric-border bg-white rounded-2xl p-8 border border-nordic-100 hover:border-transparent transition-all duration-300">
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <path d="M22 6l-10 7L2 6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-medium text-nordic-900 mb-2">Email Us</h4>
+                  <a href="mailto:info@auragridsolutions.com" className="text-sm text-nordic-500 hover:text-nordic-900 transition-colors">
+                    info@auragridsolutions.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Google Map */}
+          <div className="map-container h-full min-h-[400px]">
+            <iframe
+              src="https://maps.google.com/maps?q=25.118649,55.377739&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: '400px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="AuraGrid Solutions Location - Dubai Silicon Oasis"
+              className="rounded-2xl"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTA() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref);
+
+  return (
+    <section ref={ref} className="py-24 lg:py-32 bg-nordic-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 right-10 w-96 h-96 rounded-full bg-white"></div>
         <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-sage"></div>
       </div>
+
+      {/* Electric line decorations */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -420,8 +575,11 @@ function Contact() {
               </svg>
               Contact Us
             </a>
-            <a href="#services" className="inline-flex items-center gap-2 px-8 py-4 border border-nordic-700 text-white text-sm font-medium rounded-full hover:border-nordic-500 transition-all duration-300">
-              View Services
+            <a href="tel:+971567835629" className="inline-flex items-center gap-2 px-8 py-4 border border-nordic-700 text-white text-sm font-medium rounded-full hover:border-nordic-500 transition-all duration-300">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Call Us
             </a>
           </div>
         </div>
@@ -438,9 +596,7 @@ function Footer() {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </div>
             <span className="text-white font-medium">AuraGrid Solutions</span>
@@ -449,12 +605,12 @@ function Footer() {
           <div className="flex items-center gap-8">
             <a href="#about" className="text-sm text-nordic-400 hover:text-white transition-colors">About</a>
             <a href="#services" className="text-sm text-nordic-400 hover:text-white transition-colors">Services</a>
-            <a href="#approach" className="text-sm text-nordic-400 hover:text-white transition-colors">Approach</a>
+            <a href="#team" className="text-sm text-nordic-400 hover:text-white transition-colors">Team</a>
             <a href="#contact" className="text-sm text-nordic-400 hover:text-white transition-colors">Contact</a>
           </div>
 
           <p className="text-sm text-nordic-500">
-            © 2024 AuraGrid Solutions. Berlin, Germany.
+            © 2024 AuraGrid Solutions. Dubai, UAE.
           </p>
         </div>
       </div>
@@ -470,8 +626,10 @@ export default function App() {
       <Stats />
       <About />
       <Services />
+      <Team />
       <Approach />
       <Contact />
+      <CTA />
       <Footer />
     </div>
   );
