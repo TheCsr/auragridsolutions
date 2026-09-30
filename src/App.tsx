@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import AIChat from './AIChat';
 
 function useInView(ref: React.RefObject<HTMLElement | null>, threshold = 0.1) {
   const [isInView, setIsInView] = useState(false);
@@ -76,7 +77,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center bg-white overflow-hidden">
       {/* Electric line accents */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/20 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-energy/30 to-transparent"></div>
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-nordic-900"></div>
         <div className="absolute bottom-20 left-10 w-64 h-64 rounded-full bg-accent"></div>
@@ -89,8 +90,8 @@ function Hero() {
           <div>
             <div className="animate-fade-in-up opacity-0-start">
               <span className="inline-flex items-center gap-2 px-4 py-2 bg-sage-light text-sage text-sm font-medium rounded-full mb-8">
-                <span className="w-2 h-2 bg-sage rounded-full electric-dot"></span>
-                Dubai & Berlin — Power Systems Consultancy
+                <span className="w-2 h-2 bg-energy rounded-full electric-dot"></span>
+                Dubai — Power Systems Consultancy
               </span>
             </div>
 
@@ -117,32 +118,31 @@ function Hero() {
 
           <div className="animate-fade-in opacity-0-start delay-400 hidden lg:block">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-sage-light/50 to-blue-50 rounded-3xl"></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-sm border border-nordic-100">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="h-32 bg-gradient-to-br from-nordic-100 to-nordic-50 rounded-xl flex items-center justify-center">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.5">
-                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                      </svg>
-                    </div>
-                    <div className="h-40 bg-gradient-to-br from-sage-light to-green-50 rounded-xl flex items-center justify-center">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#6b8f71" strokeWidth="1.5">
-                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-                      </svg>
-                    </div>
+              <div className="absolute -inset-4 bg-gradient-to-br from-sage-light/60 to-emerald-50 rounded-3xl"></div>
+              <div className="relative bg-nordic-900 rounded-2xl overflow-hidden shadow-2xl border border-nordic-800">
+                <img
+                  src="https://image.qwenlm.ai/generated-images/451da197-d30f-4a26-8a79-93777dc5f944/_result.png"
+                  alt="Complex power grid network visualization"
+                  className="w-full h-[480px] object-cover opacity-90"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900"><rect fill="#0f172a" width="800" height="900"/><g stroke="#34d399" stroke-width="1" fill="none" opacity="0.6"><circle cx="200" cy="200" r="8" fill="#34d399"/><circle cx="600" cy="150" r="8" fill="#34d399"/><circle cx="400" cy="400" r="8" fill="#34d399"/><circle cx="150" cy="600" r="8" fill="#34d399"/><circle cx="650" cy="550" r="8" fill="#34d399"/><circle cx="350" cy="700" r="8" fill="#34d399"/><circle cx="500" cy="250" r="6" fill="#6ee7b7"/><circle cx="250" cy="450" r="6" fill="#6ee7b7"/><circle cx="550" cy="750" r="6" fill="#6ee7b7"/><line x1="200" y1="200" x2="600" y2="150"/><line x1="200" y1="200" x2="400" y2="400"/><line x1="600" y1="150" x2="500" y2="250"/><line x1="400" y1="400" x2="250" y2="450"/><line x1="400" y1="400" x2="650" y2="550"/><line x1="150" y1="600" x2="250" y2="450"/><line x1="150" y1="600" x2="350" y2="700"/><line x1="650" y1="550" x2="550" y2="750"/><line x1="350" y1="700" x2="550" y2="750"/><line x1="500" y1="250" x2="600" y2="150"/></g></svg>');
+                  }}
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-nordic-900/80 via-transparent to-transparent"></div>
+                {/* Floating stats */}
+                <div className="absolute bottom-6 left-6 right-6 flex gap-3">
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
+                    <div className="text-xs text-emerald-300 mb-1">Grid Efficiency</div>
+                    <div className="text-xl font-light text-white">99.7%</div>
                   </div>
-                  <div className="space-y-4 pt-8">
-                    <div className="h-40 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl flex items-center justify-center">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="1.5">
-                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                      </svg>
-                    </div>
-                    <div className="h-32 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl flex items-center justify-center">
-                      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#d97706" strokeWidth="1.5">
-                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                      </svg>
-                    </div>
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
+                    <div className="text-xs text-emerald-300 mb-1">Renewable Mix</div>
+                    <div className="text-xl font-light text-white">85%</div>
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-md rounded-xl px-4 py-3 border border-white/10">
+                    <div className="text-xs text-emerald-300 mb-1">Uptime</div>
+                    <div className="text-xl font-light text-white">24/7</div>
                   </div>
                 </div>
               </div>
@@ -436,7 +436,7 @@ function Approach() {
             <div className="space-y-8">
               {steps.map((step, i) => (
                 <div key={i} className="flex gap-6 group">
-                  <div className="text-3xl font-light text-nordic-200 group-hover:text-electric transition-colors duration-300">{step.num}</div>
+                  <div className="text-3xl font-light text-nordic-200 group-hover:text-energy transition-colors duration-300">{step.num}</div>
                   <div>
                     <h4 className="font-medium text-nordic-900 mb-2">{step.title}</h4>
                     <p className="text-sm text-nordic-500 leading-relaxed">{step.desc}</p>
@@ -555,8 +555,8 @@ function CTA() {
       </div>
 
       {/* Electric line decorations */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-electric/30 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-energy/40 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-energy/40 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         <div className={`max-w-3xl mx-auto text-center transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -631,6 +631,7 @@ export default function App() {
       <Contact />
       <CTA />
       <Footer />
+      <AIChat />
     </div>
   );
 }
